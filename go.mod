@@ -1,4 +1,4 @@
-module github.com/renz7/echo_sonic
+module github.com/renz7/echo-sonic
 
 go 1.20
 

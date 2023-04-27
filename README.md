@@ -13,7 +13,7 @@ amd64 supported only,cause depending on sonic.
 ## Installing
 
 ```shell
-go get github.com/renz7/echo_sonic 
+go get github.com/renz7/echo-sonic
 ```
 
 ## Use in echo project
