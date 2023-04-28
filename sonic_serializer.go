@@ -1,13 +1,14 @@
 //go:build amd64
+// +build amd64
 
 package echosonic
 
 import (
+	"github.com/labstack/echo/v4"
 	"net/http"
 
 	"github.com/bytedance/sonic/decoder"
 	"github.com/bytedance/sonic/encoder"
-	"github.com/labstack/echo/v4"
 )
 
 type SonicJSONSerializer struct {

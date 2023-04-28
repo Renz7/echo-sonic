@@ -1,25 +1,17 @@
 //go:build amd64
+// +build amd64
 
 package echosonic
 
 import (
 	"github.com/labstack/echo/v4"
-	"net/http"
-	"net/http/httptest"
-	"strings"
+	"github.com/renz7/echo-sonic/util"
 	"testing"
 )
 
 type TestStruct struct {
 	Name  string
 	Int64 int64
-}
-
-func NewContext(e *echo.Echo) echo.Context {
-	request := httptest.NewRequest(http.MethodGet, "/", strings.NewReader("{\"name\":\"test\"}"))
-	request.Header.Set(echo.HeaderContentType, echo.MIMEApplicationJSON)
-	recorder := httptest.NewRecorder()
-	return e.NewContext(request, recorder)
 }
 
 func TestSonicJSONSerializer_Serialize(t *testing.T) {
@@ -40,7 +32,7 @@ func TestSonicJSONSerializer_Serialize(t *testing.T) {
 			name: "test case 0",
 			s:    SonicJSONSerializer{},
 			args: args{
-				c: NewContext(e),
+				c: util.NewTestContext(e),
 				i: TestStruct{
 					Name:  "test_case_0",
 					Int64: int64(1),
