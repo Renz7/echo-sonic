@@ -4,8 +4,6 @@
 
 ## Requirement
 
-amd64 supported only if sonic.
-
 - Go 1.15~1.20
 - Linux/MacOS/Windows
 - Amd64 ARCH(sonic)
